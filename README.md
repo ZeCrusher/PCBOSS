@@ -12,7 +12,7 @@ En bas à droite, sur le logo TSK, vous pouvez charger une autre police de carac
 ![Image5](https://user-images.githubusercontent.com/102222839/204313690-b490561c-5fa6-4d23-8d57-aaa2c8d26155.jpg)
 
 
-Mini éditeur de fichier (Version Béta - A finir) : 
+Mini éditeur de fichier texte (*.TXT) (Version Béta - A finir) : 
 
 
 ![editeur](https://user-images.githubusercontent.com/102222839/204313697-949b2f7f-a3d4-40a5-a037-33ad817d1093.jpg)
