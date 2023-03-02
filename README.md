@@ -16,3 +16,7 @@ Mini éditeur de fichier texte (*.TXT) (Version Béta - A finir) :
 
 
 ![editeur](https://user-images.githubusercontent.com/102222839/204313697-949b2f7f-a3d4-40a5-a037-33ad817d1093.jpg)
+
+Mini Editeur Hexadécimal (pour n'importe quel fichier).
+
+![hexa](https://user-images.githubusercontent.com/102222839/222380468-086e6573-5cc2-431d-8716-45ac6e3318f4.jpg)
