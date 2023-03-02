@@ -1,14 +1,14 @@
 // Programme PCBOSS par TSAKIROPOULOS SERGE
 // Utilitaire en Mode texte 80x25
-// R‚alis‚ le: 12/12/1994
-// DŠrniŠre modif: 03/11/97
-// Test de la configuration de la M‚moire … la compilation .....
- #include "c:\PCBOSS\fct\fmem__.cpp" // Verifie les Erreurs du au modele de m‚moire
+// RÃ©aliser le: 12/12/1994
+// DÃ©rniÃ¨re modif: 03/11/97
+// Test de la configuration de la MÃ©moire â€¦ la compilation .....
+ #include "c:\PCBOSS\fct\fmem__.cpp" // Verifie les Erreurs dÃ» au modele de mÃ©moire
 
- #pragma hdrfile 	 "c:\PCBOSS\tsk.SYM"  // Changement du fichier entêtes précompilés.
+ #pragma hdrfile 	 "c:\PCBOSS\tsk.SYM"  // Changement du fichier entÃªtes prÃ©compilÃ©s.
  #pragma -O2		// vitesse
  #pragma -G		// vitesse du code EXE
- #pragma -ml		// Pour les pointeurs - ModŠle de m‚moire voir Option|Compiler|Code_generation|Large(ù)
+ #pragma -ml		// Pour les pointeurs - ModÃ¨le de mÃ©moire voir Option|Compiler|Code_generation|Large
 
  #pragma warn -par
 
@@ -66,46 +66,46 @@
  #define MAJDMIN					1
  #define MAJPMIN					2
 // Utiliser dans MESSAGE_ERR.H ///////////////////////////////////////////
- #define FICHIERR				4
+ #define FICHIERR					4
 ///Utiliser dans FSAISIE.cpp/////////////////////////////////////////////
- #define INIT_VAR				-1
+ #define INIT_VAR					-1
 ////////////////////////////////////////////////////////////////////////
- #define CLS 								textbackground(BLACK);clrscr()
- #define colorxy(x,y,color,fond) 	gotoxy(x,y);textcolor(color);textbackground(fond)
+ #define CLS 						textbackground(BLACK);clrscr()
+ #define colorxy(x,y,color,fond) 			gotoxy(x,y);textcolor(color);textbackground(fond)
 ////////////////////////////////////////////////////////////////////////
- #define NO_DEF					  255
+ #define NO_DEF					  	255
  /////////////////////////////////////
- #define CHAINE 					  1 // Erreur pour message_err
- #define CONTINUE					  0 // Pour la fonction afficher_tableau_octet
- #define DEBUT    				  1 // idem  					   <ÄÄÙ
- #define SUPPRIMER  			  	  5
- #define PAS_DE_SOURIS          2  // Pour le message d'erreur quand il n'y a pas de souris
- #define INTERRUPTION			  3  // Pour le message quand l'utilisateur arrete la recherche
+ #define CHAINE 					1 // Erreur pour message_err
+ #define CONTINUE					0 // Pour la fonction afficher_tableau_octet
+ #define DEBUT    				  	1 // idem  					   <Ã„Ã„Ã™
+ #define SUPPRIMER  			  	 	5
+ #define PAS_DE_SOURIS          			2  // Pour le message d'erreur quand il n'y a pas de souris
+ #define INTERRUPTION			  		3  // Pour le message quand l'utilisateur arrete la recherche
  #define END						exit(EXIT_SUCCESS)
- #define INIT_BOUTON				  0
- #define OFF					 	  0
- #define ON					 		  1
- #define TAILLE512				50
- #define LANCER   				666
- #define QUITTER  				222
- #define VALEUR   				444
- #define INITI    				333
- #define PREMIER_FICHIER		  0
- #define TERMINER				  1
- #define RECHERCHER				  2
- #define PAGE					  0
- #define DIRECTO				  0
- #define FICH                NO_DEF
- #define POURSUITE				  1
- #define Fichier_max			1999
- #define Repertoire_max			1999
- #define ANNULER				22
- #define SUPPRIMER				5
- #define NBR_NIVEAU				20
- #define CODE_DEL  				0x53
+ #define INIT_BOUTON				  	0
+ #define OFF					 	0
+ #define ON					 	1
+ #define TAILLE512					50
+ #define LANCER   					666
+ #define QUITTER  					222
+ #define VALEUR   					444
+ #define INITI    					333
+ #define PREMIER_FICHIER		  		0
+ #define TERMINER				  	1
+ #define RECHERCHER				  	2
+ #define PAGE					  	0
+ #define DIRECTO				  	0
+ #define FICH                				NO_DEF
+ #define POURSUITE				  	1
+ #define Fichier_max					1999
+ #define Repertoire_max					1999
+ #define ANNULER					22
+ #define SUPPRIMER					5
+ #define NBR_NIVEAU					20
+ #define CODE_DEL  					0x53
 
- #define WIN_FIL				10
- #define WIN_REP				0
+ #define WIN_FIL					10
+ #define WIN_REP					0
 
 
 #if !defined( __FINCLUDE )
@@ -146,15 +146,15 @@
  #define __FFICHIER
 #endif
 
-// Affecte le nom de symbole byte … la d‚finition de type de donn‚e unsigned char
+// Affecte le nom de symbole byte â€¦ la dÃ©finition de type de donnÃ©e unsigned char
 typedef unsigned char byte; // Define un type BYTE
 typedef unsigned int  word; // Define un type WORD
 
 static char *err_msg[] = {
-	"Support proteg‚ contre l'‚criture","unknown unit",
-	"Le Lecteur n'est pas pr‚t","commande inconnue","data error (CRC)",
+	"Support protegÃ© contre l'Ã©criture","unknown unit",
+	"Le Lecteur n'est pas prÃªt","commande inconnue","data error (CRC)",
 	"bad request","seek error","unknown media type",
-	"secteur non trouv‚","Plus de papier ",
+	"secteur non trouvÃ©","Plus de papier ",
 	"Ecriture impossible","Lecture du support impossible ",
 	"general failure","reserved","reserved",
 	"invalid disk change"
@@ -171,15 +171,15 @@ void command_system();
 void sauver_hexa(long pointeur,long nombre_lue);
 void code_hexa(int x,int y,char touche,int position);
 void far handler(unsigned deverr, unsigned errval, unsigned far *devhdr);
-void affiche_pourcent_disk(float taille);   		// Affiche le pourcentage en bas de l'‚cran
+void affiche_pourcent_disk(float taille);   		// Affiche le pourcentage en bas de l'â€šcran
 void cadre_OFFSET(int mode,char *nom);
-void presentation(void); 							// C'est le premier cadre du debut (c)
+void presentation(void); 				// C'est le premier cadre du debut (c)
 void fenetre_repertoire_fix(void);
-void lecteur_indefinie(void); 						// Pour un changement de lecteur
-void lire_lecteur(char changement);								// Lit ce qu'il y a sur le lecteur en cour
+void lecteur_indefinie(void); 				// Pour un changement de lecteur
+void lire_lecteur(char changement);			// Lit ce qu'il y a sur le lecteur en cour
 void fenetre_aide();
 void fenetre_repertoire(void);
-void fenetre_fichier(void); // affiche les fichiers dans le plus grand cadre bleue
+void fenetre_fichier(void); 				// affiche les fichiers dans le plus grand cadre bleue
 void menu_affichage(void);
 void menu_fichier(char nm_fichier[13],int argument);
 void aff_nbr_fichier_rep(void);
@@ -194,13 +194,13 @@ void fenetre_files(int color);
 void fenetre_directory(int color);
 void hd_space(void);
  int titre_bouton(int x,int y,char texte[60],char color,char fond,char ombre,char fond_cadre);
- int changement_de_repertoire(void);                // dans le menu principal change le repertoire en cour
- int fenetre_options();                         	// Menu debut ou Recherche ou position ou aide
+ int changement_de_repertoire(void);                	// dans le menu principal change le repertoire en cour
+ int fenetre_options();                         	// Menu dÃ©but ou Recherche ou position ou aide
  int ouverture_fichier(char texte_fichier[100]);
  int affichage_str(int code_ascii);
  int Erreur_sur_fichier(void);
- int fenetre_contenu(char nom_fichier[13], int argument,int mode); // retourne si le fichier est OK
- int fenetre_contenu_ascii(char nom_fichier[13]); // retourne si le fichier est OK
+ int fenetre_contenu(char nom_fichier[13], int argument,int mode); 	// retourne si le fichier est OK
+ int fenetre_contenu_ascii(char nom_fichier[13]); 			// retourne si le fichier est OK
  int lire_dans_fichier(int nbr_octet);
  int error_win();
 void screen(void);
@@ -218,7 +218,7 @@ extern void space(int l,int color);         // Surcharge de fonction space
 extern void space(int x,int y,int l,int color);
 extern void winp(int x,int y,int x1,int y1,int color_texte,int color_fond,int winp_color,char *texte);
 extern void bouton_xyl(int x,int y,int l);
-extern void decor_fond_(void);  // deco en ²²² > white MODIF FOND Õ
+extern void decor_fond_(void);  // deco en Â²Â²Â² > white MODIF FOND Ã•
 extern  int hexa(char hexa_code_1,char hexa_code_2);
 extern void color(unsigned char x,unsigned char y);
 extern void right(unsigned char texte_source[255],unsigned char texte_objet[255],int taille_du_source,int emplacement);
@@ -234,7 +234,7 @@ extern void cadre_plein(byte x,byte y,byte x1,byte y1,byte type_trait,byte color
 extern  int input(int x,int y,int nbr_lettre_saisie,char texte[132],int color);
 // Dans FASCII.H -----------------------------------------------------------
 extern void table_ascii(void);
-extern void init_ascii();  								// Init la cr‚ation des codes ASCII
+extern void init_ascii();  								// Init la crâ€šation des codes ASCII
 extern void definition_ascii(char table[16],char ascii);   //
 /* Dans FINCLUD.H ----------------------------------------------------------
 	rien -------------------------------------------------------------------------*/
@@ -246,11 +246,11 @@ extern int recherche_nbr_lecteur(void);
 extern void ass_vert(int x,int y,int longueur,long nbr,int emplacement,int color);
 extern unsigned int taille_cluster(void);
 
-// les donn‚es
+// les donnâ€šes
 extern 	byte tree[Repertoire_max][25];
 
-/* augmente la taille de la pile. La déclaration doit ˆtre situ‚e */
-/* en dehors de la zone de donn‚es globale. */
+/* augmente la taille de la pile. La dÃ©claration doit Ë†tre situâ€še */
+/* en dehors de la zone de donnâ€šes globale. */
 
 	 extern unsigned _stklen = 50000U;
 
@@ -283,7 +283,7 @@ extern 	byte tree[Repertoire_max][25];
 
 	struct liste_fichier	{
 		char files[13];	// nom du fichier 13 = 8 char + 1 "." + 3 char extention
-		unsigned long	taille;  // + 1 de code de sp‚cification
+		unsigned long	taille;  // + 1 de code de spâ€šcification
 		char attribut;
 	};
 	extern  struct	liste_fichier num_fichier[Fichier_max];
@@ -304,14 +304,14 @@ extern 	byte tree[Repertoire_max][25];
 	int cplx=0; // pour chdir
 	char fin_fichier=0;
 
-	FILE *in; // Structure de contr“le des flux
+	FILE *in; // Structure de contrâ€œle des flux
 	byte sauvegarde_octet[280]; //sauve 256 octets lus pour la modif
 
 	int emplacement=0,final=0;
 
 	static int poscour=1,vers_bas=0;
 
-// Structure pour la s‚lection des fichiers
+// Structure pour la sâ€šlection des fichiers
 	struct fichier_bit_field fichier_[Fichier_max];
 	struct fichier_bit_field Num_,Cap,Scr;
 
@@ -337,18 +337,18 @@ void main(char argc, char **argv)
 //*/
 //   initialise le marqueur des fichiers
 
-	_harderr(handler); // Etablit un gestionnaire des erreurs mat‚rielles.
+	_harderr(handler); // Etablit un gestionnaire des erreurs matâ€šrielles.
 	screen(); // Mode video standart 80x25x16
 
 	init_mem_fichier();  // Vide tous les noms des fichiers de la memoire
 	init_mem_repertoire();  // Vide tous les noms des repertoire de la memoire
 
-	fond(0);			// D‚finition des 15 couleurs du fond
+	fond(0);			// Dâ€šfinition des 15 couleurs du fond
 
-	table_ascii();		// F1 , Cr‚ation des nouveau char ASCII
+	table_ascii();		// F1 , Crâ€šation des nouveau char ASCII
 
 	color(7,0);
-	if (check_mscdex()==0) printf("\nPas de CD ROM"); else printf("\nCD ROM trouv‚");
+	if (check_mscdex()==0) printf("\nPas de CD ROM"); else printf("\nCD ROM trouvâ€š");
 
 	if ((police=charger_table("long.als"))!=1)    // Charge la police de caractere ALES
 	{
@@ -384,12 +384,12 @@ void main(char argc, char **argv)
 		}
 		check_mscdex();
 
-	if (argc!=2) // v‚rifie la syntaxe
+	if (argc!=2) // vâ€šrifie la syntaxe
 	{
 		locatext(1,25,"                                                             ZeCrusher",1+16*8);
-		locatext(71,25," Ó×ô ",14+16*8);
+		locatext(71,25," Ã“Ã—Ã´ ",14+16*8);
 
-		locatext(56,25,"ÄÄÍÍÍ",11+16*8);locatext(76,25,"ÍÍÄÄ ",11+16*8);
+		locatext(56,25,"Ã„Ã„ÃÃÃ",11+16*8);locatext(76,25,"ÃÃÃ„Ã„ ",11+16*8);
 		presentation();
 
 	}
@@ -405,7 +405,7 @@ void main(char argc, char **argv)
 
 	decor_fond_(15,7);
 	locatext(34,1,"P C B O S S",11+16*1);
-	locatext(76,25," Ó×ô ",14+16*9);
+	locatext(76,25," Ã“Ã—Ã´ ",14+16*9);
 
 	space(1,2,80,BLACK+16*WHITE);
 	space(1,3,80,BLACK+16*BLUE); // Ce sont les 2 barres de couleur du haut de l'ecran
@@ -429,7 +429,7 @@ void main(char argc, char **argv)
 	locatext(fenfix+5,6,num_fichier[PREMIER_FICHIER].files,WHITE+16*12);
 	choix_menu=0;
 	place_r=0;// initialise le haut du tableau
-	place_f=0; // de mˆme pour les fichiers , ce qui indique le debut de tableau
+	place_f=0; // de mË†me pour les fichiers , ce qui indique le debut de tableau
 
 
 	do
@@ -439,11 +439,8 @@ void main(char argc, char **argv)
 
 		bouton = ZERO_BOUTON_APPUYER ; // indique qu'aucun bouton n'est appuyer
 		etat_souris();
-
 		valeur_xxreel=((posx/8)+1); // Ici il ne faut pas 640 x 480 d'ou / 8)+1
 		valeur_yyreel=((posy/8)+1);
-
-
 		value = peek(0x0040, 0x0017);
 		if (value&8) {
 			cache_souris();
@@ -451,9 +448,9 @@ void main(char argc, char **argv)
 			menu_fichier(nom_fichier_backup,argument);
 		}
 
-// Partie CLAVIER qui utilise les 2 touches flech‚s
+// Partie CLAVIER qui utilise les 2 touches flechâ€šs
 
-		if (bioskey(1)!=0) // Touche Sp‚cial
+		if (bioskey(1)!=0) // Touche Spâ€šcial
 		{
 			cache_souris();
 			clavier=toupper(getch());
@@ -538,7 +535,7 @@ void main(char argc, char **argv)
 			}
 			if (clavier=='\x0') // test une touche LIGHT ' 0 + le code ASCII '
 			{
-				clavier=getch();   // test des touches fl‚che
+				clavier=getch();   // test des touches flâ€šche
 				ass_vert(28,6,14,nbr_repertoire,place_r,3+16*1);
 				ass_vert(78,6,14,nbr_fichier,place_f,3+16*1);
 
@@ -646,7 +643,7 @@ void main(char argc, char **argv)
 		{
 			if (found_file(nom_fichier,rep,"*.als","  Choisir une Police Dos (ALes)")==1) {
 					charger_table(nom_fichier);
-					table_ascii();		// F1 , Cr‚ation des nouveau char ASCII
+					table_ascii();		// F1 , Crâ€šation des nouveau char ASCII
 			}
 			debut_traitement(10,10); // Affiche le mot PAUSE dans un cadre
 				nbr_fichier=recherche_fichier(fichier_default);
@@ -665,7 +662,7 @@ void main(char argc, char **argv)
 			locatext(fenfix+5,6,num_fichier[PREMIER_FICHIER].files,WHITE+16*12);
 			choix_menu=0;
 			place_r=0;// initialise le haut du tableau
-			place_f=0; // de mˆme pour les fichiers , ce qui indique le debut de tableau
+			place_f=0; // de mË†me pour les fichiers , ce qui indique le debut de tableau
 
 		}
 		if ((bouton==BOUTON_GAUCHE)&&(valeur_yyreel>5)&&(valeur_yyreel<22)&&(valeur_xxreel<26)&&(valeur_xxreel>2)&&(strcmp(num_repertoire[place_r+(valeur_yyreel-6)].repertoire," ")))
@@ -719,7 +716,7 @@ void main(char argc, char **argv)
 				if (fichier_[place_f+h].marque_==ON)
 				{
 					locatext(fenfix+5,6+h,num_fichier[place_f+h].files,12+16*1);
-					locatext(fenfix+1,6+h,"û ",10+16*1);
+					locatext(fenfix+1,6+h,"Ã» ",10+16*1);
 				}
 				else
 				{
@@ -727,10 +724,10 @@ void main(char argc, char **argv)
 					if (num_fichier[h+place_f].files[0]!=' ')
 					{
 						if ((strirech(num_fichier[h+place_f].files,".EXE")!=-1)||(strirech(num_fichier[h+place_f].files,".BAT")!=-1)||(strirech(num_fichier[h+place_f].files,".COM")!=-1))						{
-							locatext(fenfix+1,6+h,"Öü",7+16*1);
+							locatext(fenfix+1,6+h,"Ã–Ã¼",7+16*1);
 						}
 						else						{
-							locatext(fenfix+1,6+h,"Ôý",7+16*1);
+							locatext(fenfix+1,6+h,"Ã”Ã½",7+16*1);
 						}
 					}
 				}
@@ -747,7 +744,7 @@ void main(char argc, char **argv)
 
 		poscour=place_f+(valeur_yyreel-6);
 
-// 	S‚lection de l'affichage *.*, *.com 	ect ...
+// 	Sâ€šlection de l'affichage *.*, *.com 	ect ...
 		if ((bouton==BOUTON_GAUCHE)&&(valeur_yyreel==2)&&(valeur_xxreel<12)&&(valeur_xxreel>4))  {
 			strcpy(nom_fichier_backup,num_fichier[place_f+vers_bas].files);
 			relacher_bsgauche();cache_souris();
@@ -762,7 +759,7 @@ void main(char argc, char **argv)
 			bar_menu(1,2,BLACK,WHITE,RED,"    _Fichier    _Extention    ");//_Aide");
 		}
 
-// S‚lection du lecteur A: B: C: ect ...........
+// Sâ€šlection du lecteur A: B: C: ect ...........
 		if ((bouton==BOUTON_GAUCHE)&&(valeur_yyreel==3)&&(valeur_xxreel<7)&&(valeur_xxreel>2))
 		{
 			place_r=place_f=vers_bas=placr=0;
@@ -888,7 +885,7 @@ void fenetre_repertoire()
 			locatext(3,6+es,tree[es+place_r],10+16*1);
 			locatext(3+strlen(tree[es+place_r]),6+es,num_repertoire[place_r+es].repertoire,31);
 	}
-	if (nbr_repertoire==0) locatext(6,6,"Pas de r‚pertoire. ",11+16*1);
+	if (nbr_repertoire==0) locatext(6,6,"Pas de râ€špertoire. ",11+16*1);
 
 	window(1,1,80,25);
 
@@ -905,7 +902,7 @@ void fenetre_fichier()
 		if (fichier_[t+place_f].marque_==ON)
 		{
 			locatext(fenfix+5,6+t,num_fichier[t+place_f].files,12+16*1);
-			locatext(fenfix+1,6+t,"û ",10+16*1);
+			locatext(fenfix+1,6+t,"Ã» ",10+16*1);
 		}
 		else
 		{
@@ -913,10 +910,10 @@ void fenetre_fichier()
 			if (num_fichier[t+place_f].files[0]!=' ')
 			{
 				if ((strirech(num_fichier[t+place_f].files,".EXE")!=-1)||(strirech(num_fichier[t+place_f].files,".BAT")!=-1)||(strirech(num_fichier[t+place_f].files,".COM")!=-1))				{
-					locatext(fenfix+1,6+t,"Öü",7+16*1);
+					locatext(fenfix+1,6+t,"Ã–Ã¼",7+16*1);
 				}
 				else	{
-						locatext(fenfix+1,6+t,"Ôý",7+16*1);
+						locatext(fenfix+1,6+t,"Ã”Ã½",7+16*1);
 				}
 			}
 		}
@@ -946,9 +943,9 @@ void fenetre_fichier()
 	}
 	if (nbr_fichier==0) locatext(38,6,"Pas de fichier . ",11+16*1);
 	if ((nbr_repertoire==0)&&(nbr_fichier==0)) {
-		locatext(38,7,"Ce lecteur ne possede pas de donn‚es",11+16*1);
+		locatext(38,7,"Ce lecteur ne possede pas de donnâ€šes",11+16*1);
 		locatext(38,9,"Pressez '?' pour la liste des ",7+16*1);
-		locatext(38,10,"des diff‚rents lecteur disponible",7+16*1);
+		locatext(38,10,"des diffâ€šrents lecteur disponible",7+16*1);
 
 	}
 	taille_files=0;
@@ -966,10 +963,10 @@ void lecteur_indefinie()
 	int nbr_lecteur=0;
 	int taille=0;
 
-	byte *str_disk[26]={" _A: ÑÒú "," _B: ÑÒú "," _C: ÏÐµ "," _D: ÏÐµ "," _E: ÏÐµ "," _F: ÏÐµ "," _G: ÏÐµ ",
-						" _H: ÏÐµ "," _I: ÏÐµ "," _J: ÏÐµ "," _K: ÏÐµ "," _L: ÏÐµ "," _M: ÏÐµ "," _N: ÏÐµ ",
-						" _O: ÏÐµ "," _P: ÏÐµ "," _Q: ÏÐµ "," _R: ÏÐµ "," _S: ÏÐµ "," _T: ÏÐµ "," _U: ÏÐµ ",
-						" _W: ÏÐµ "," _X: ÏÐµ "," _Y: ÏÐµ "," _Z: ÏÐµ " };
+	byte *str_disk[26]={" _A: Ã‘Ã’Ãº "," _B: Ã‘Ã’Ãº "," _C: ÃÃÂµ "," _D: ÃÃÂµ "," _E: ÃÃÂµ "," _F: ÃÃÂµ "," _G: ÃÃÂµ ",
+						" _H: ÃÃÂµ "," _I: ÃÃÂµ "," _J: ÃÃÂµ "," _K: ÃÃÂµ "," _L: ÃÃÂµ "," _M: ÃÃÂµ "," _N: ÃÃÂµ ",
+						" _O: ÃÃÂµ "," _P: ÃÃÂµ "," _Q: ÃÃÂµ "," _R: ÃÃÂµ "," _S: ÃÃÂµ "," _T: ÃÃÂµ "," _U: ÃÃÂµ ",
+						" _W: ÃÃÂµ "," _X: ÃÃÂµ "," _Y: ÃÃÂµ "," _Z: ÃÃÂµ " };
 
 
 	nbr_lecteur=recherche_nbr_lecteur();
@@ -1028,10 +1025,10 @@ void menu_fichier(char nm_fichier[13],int argument)
 {
 	int resultat_menu=0;
 
-	byte *str_fichier[11]  ={" _Editeur hexadecimal"," Editeur _Ascii       D Mouse","ÿ"," _Supprimer             Suppr","ÿ"," _Espace libre sur disque","ÿ"," _Quitter "};
+	byte *str_fichier[11]  ={" _Editeur hexadecimal"," Editeur _Ascii       D Mouse","Ã¿"," _Supprimer             Suppr","Ã¿"," _Espace libre sur disque","Ã¿"," _Quitter "};
 
 //	 bar_menu(1,2,BLACK,WHITE,RED,"    _Fichier    _Extention    ");//_Aide");
-	//				       type  cadre Ä¿ coulbar ¿  ¿   Úcoulcadre¿  Ú texte  Ú lettre
+	//				       type  cadre Ã„Â¿ coulbar Â¿  Â¿   ÃšcoulcadreÂ¿  Ãš texte  Ãš lettre
 	fin_fichier=0; // initialise la fin du fichier pour l'affichage
 	resultat_menu=menu_der(5,3,30,9,9,SIMPLE,WHITE,LIGHTRED,DARKGRAY,LIGHTCYAN,BLACK,RED,str_fichier);
 	bouton=ZERO_BOUTON_APPUYER;
@@ -1051,10 +1048,10 @@ void aff_nbr_fichier_rep(void)
 	gotoxy(27,3);
 	color(14,1);
 	if (nbr_repertoire>1)	{
-		cprintf("%d R‚pertoires",nbr_repertoire);
+		cprintf("%d Râ€špertoires",nbr_repertoire);
 	}
 	else	{
-		cprintf("%d R‚pertoire",nbr_repertoire);
+		cprintf("%d Râ€špertoire",nbr_repertoire);
 	}
 	gotoxy(46,3);
 	if (nbr_fichier>1)	{
@@ -1100,10 +1097,10 @@ int recherche(void)
 
 	int ev_recu=0,c=0;
 
-	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas Ë†tre obliger de tout râ€šafficher
 	winp(15,5,65,15,BLACK,WHITE,9,"  Rechercher des octets ");
 
-	locatext(18,7,"Entrer votre chaŒne",15+16*9);
+	locatext(18,7,"Entrer votre chaÅ’ne",15+16*9);
 
 	space(18,9,44,0);
 	if (input(20,9,40,texte_hexa,11)>0)	{
@@ -1225,7 +1222,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 	int sub=0,choix_menu=1,x=0,y=0;              // choix de la touche de la souris pour la modification
 	int position_tableau=0,etat=-1;
 	char longueur_chaine=0;
-	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas Ë†tre obliger de tout râ€šafficher
 	nbr_lus_dans_tableau=0;
 		do
 		{
@@ -1255,7 +1252,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 	if (mode==0)
 		for(int i1=0;i1<3;i1++)
 			for(int i2=0;i2<5;i2++)
-				cputs ("ÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕÕ");
+				cputs ("Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•Ã•");
 
 	cadre_OFFSET(0,nom_fichier);
 
@@ -1288,7 +1285,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 				cache_souris();
 				puttext(1, 1, 80, 25, ecran);
 				if (argument==2) {
-					CLS;printf(" Fin de l'‚diteur Hexa_ PCBOSS ");
+					CLS;printf(" Fin de l'â€šditeur Hexa_ PCBOSS ");
 					_setcursortype(_SOLIDCURSOR);
 					exit(0);
 				}
@@ -1303,7 +1300,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 			if (touche==27)			{
 				fclose(in);cache_souris();puttext(1, 1, 80, 25, ecran);montre_souris();
 				if (argument==2)	{
-					CLS;printf(" Fin de l'‚diteur Hexa_ PCBOSS ");
+					CLS;printf(" Fin de l'â€šditeur Hexa_ PCBOSS ");
 					_setcursortype(_SOLIDCURSOR);
 					exit(0);
 				}
@@ -1383,7 +1380,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 			gettext(14, 7, 68, 12,lecture);
 			cadre_plein(14,7,66,11,0,WHITE,WHITE,1);  // cadre rep
 			space(14,7,53,5+16*5);
-			locatext(24,7,"Entrez votre chaŒne ",WHITE+16*5);
+			locatext(24,7,"Entrez votre chaÅ’ne ",WHITE+16*5);
 			space(16,9,49,0);
 			longueur_chaine=input(17,9,48,texte,11);
 			puttext(14,7,68,12,lecture);
@@ -1452,7 +1449,7 @@ int fenetre_contenu(char nom_fichier[13], int argument,int mode) // retourne si 
 			relacher_bsgauche();
 			position_options=fenetre_options();  // Indique si le fichier est repositionner au debut
 			  if (position_options==1)
-			  {	locatext(6,21,"                                           ",BLACK+16*CYAN); // inscrit le nom du fichier en train d'ˆtre visualiser
+			  {	locatext(6,21,"                                           ",BLACK+16*CYAN); // inscrit le nom du fichier en train d'Ë†tre visualiser
 					nbr_de_char_lus=0;fseek(in,0,SEEK_SET);
 					nbr_lus_dans_tableau=lire_dans_fichier(272);
 					afficher_tableau_octets(nbr_lus_dans_tableau,DEBUT,nbr_de_char_lus-(long) nbr_lus_dans_tableau);
@@ -1478,27 +1475,27 @@ void cadre_OFFSET(int mode,char *nom)
 	color(YELLOW,CYAN); 			// couleur du texte OFFSET
 	gotoxy(3,3);cprintf(" OFFSET");
 	space(1,24,80,1+16*1);
-	space(1,25,79,BLACK+16*LIGHTGRAY); // inscrit le nom du fichier en train d'ˆtre visualiser
+	space(1,25,79,BLACK+16*LIGHTGRAY); // inscrit le nom du fichier en train d'Ë†tre visualiser
 
 	if (mode==POURSUITE)
 	{
-		locatext(50,22,"´  Poursuivre   Ã",DARKGRAY+16*CYAN);
+		locatext(50,22,"Â´  Poursuivre   Ãƒ",DARKGRAY+16*CYAN);
 		locatext(51,22,"   Poursuivre  ",WHITE+16*LIGHTRED);
-		locatext(30,22,"´   Terminer   Ã",DARKGRAY+16*CYAN);
+		locatext(30,22,"Â´   Terminer   Ãƒ",DARKGRAY+16*CYAN);
 		locatext(31,22,"   Terminer   ",WHITE+16*LIGHTRED);
 
 	}
 	if (mode==PAGE)	{
-		 locatext(7,22,"´  Options  Ã",DARKGRAY+16*CYAN);
-		 locatext(30,22,"´ Page suivante Ã",DARKGRAY+16*CYAN);
-		 locatext(50,22,"´ Terminer Edit Ã",DARKGRAY+16*CYAN);
+		 locatext(7,22,"Â´  Options  Ãƒ",DARKGRAY+16*CYAN);
+		 locatext(30,22,"Â´ Page suivante Ãƒ",DARKGRAY+16*CYAN);
+		 locatext(50,22,"Â´ Terminer Edit Ãƒ",DARKGRAY+16*CYAN);
 		 locatext(8,22,"  Options  ",WHITE+16*BLUE);
 		 locatext(31,22," Page suivante ",WHITE+16*BLUE);
 		 locatext(51,22," Terminer Edit ",WHITE+16*LIGHTRED);
 		 locatext(52,22,"T",YELLOW+16*LIGHTRED);	locatext(10,22,"O",YELLOW+16*BLUE);
 	}
-	locatext(40,2,nom,WHITE+16*1);  // inscrit le nom du fichier en train d'ˆtre visualiser
-	locatext(3,25,"M pour la mise … jour ³ ",0+16*7);
+	locatext(40,2,nom,WHITE+16*1);  // inscrit le nom du fichier en train d'Ë†tre visualiser
+	locatext(3,25,"M pour la mise â€¦ jour Â³ ",0+16*7);
 
 }
 int fenetre_contenu_ascii(char nom_fichier[13])
@@ -1571,12 +1568,12 @@ void fenetre_aide()
 	gettext(1, 1, 80, 25, ecran);
 	cadre_plein(7,7,73,21,0,CYAN,BLUE,1);
 	titre(28,8,YELLOW,CYAN,8,BLUE, " Aide ",0);
-	locatext(11,10,"La premiere colonne de l'affichage hexadecimal ne peut ˆtre",WHITE+16*BLUE);
-	locatext(10,11,"modifi‚e : elle fournit un num‚ro de r‚f‚rence de l'octet en",WHITE+16*BLUE);
-	locatext(10,12,"commen‡ant par 0.La zone principale est constitu‚e de champs",WHITE+16*BLUE);
-	locatext(10,13,"de 2 caractŠres qui represente un octet chacun . La derniere",WHITE+16*BLUE);
-	locatext(10,14,"colonne pr‚sente une conversion en Ascii des octets (le cas   ",WHITE+16*BLUE);
-	locatext(10,15,"‚ch‚ant ). Ces 2 zones peuvent ˆtre modifi‚es .",WHITE+16*BLUE);
+	locatext(11,10,"La premiere colonne de l'affichage hexadecimal ne peut Ë†tre",WHITE+16*BLUE);
+	locatext(10,11,"modifiâ€še : elle fournit un numâ€šro de râ€šfâ€šrence de l'octet en",WHITE+16*BLUE);
+	locatext(10,12,"commenâ€¡ant par 0.La zone principale est constituâ€še de champs",WHITE+16*BLUE);
+	locatext(10,13,"de 2 caractÅ res qui represente un octet chacun . La derniere",WHITE+16*BLUE);
+	locatext(10,14,"colonne prâ€šsente une conversion en Ascii des octets (le cas   ",WHITE+16*BLUE);
+	locatext(10,15,"â€šchâ€šant ). Ces 2 zones peuvent Ë†tre modifiâ€šes .",WHITE+16*BLUE);
 	getch();
 	puttext(1,1,80,25,ecran);
 	montre_souris();
@@ -1627,7 +1624,7 @@ int affichage_str(int code_ascii_)
 
 int ouverture_fichier(char texte_fichier[100])
 {
-	nbr_de_char_lus=0;  // Repositionne le nombre de char lus … zero
+	nbr_de_char_lus=0;  // Repositionne le nombre de char lus â€¦ zero
 	if ((in = fopen(texte_fichier, "r+b")) == NULL) // mode de Lecture et ecriture  binaire
 	{
 			return( 1 );
@@ -1643,7 +1640,7 @@ int lire_dans_fichier(int nbr_octet)
 
 	do
 	{
-		octet = fgetc( in );  // lecture d'un octet                           ÚÄÄ Coordonn‚e + 3
+		octet = fgetc( in );  // lecture d'un octet                           ÃšÃ„Ã„ Coordonnâ€še + 3
 		sauvegarde_octet[boucle]=octet; // sauve tout les octets de la page active, char du fichier
 		boucle++;		   // par groupe de 272 octets
 	}
@@ -1719,13 +1716,13 @@ void afficher_tableau_octets(int nbr_element_tableau,int mode,long offset)
 void affiche_pourcent_disk(float taille_disk)
 {
 	locatext(1,25," Reste ",WHITE+16*RED);
-	locatext(10,25,"þþþþþþþþþþþþþþþþþþþþ",1+16*7);
+	locatext(10,25,"Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾",1+16*7);
 	gotoxy(10,25);
 
 	for (int c=0;c<(20- (int ( (taille_disk*20)/100)));c++)		{
-			color(12,7);cprintf("þ");
+			color(12,7);cprintf("Ã¾");
 	}
-	 color (0,7);gotoxy(32,25);cprintf("%5.2f %% ÑÒú d'espace libre              ",taille_disk);
+	 color (0,7);gotoxy(32,25);cprintf("%5.2f %% Ã‘Ã’Ãº d'espace libre              ",taille_disk);
 }
 void far handler(unsigned deverr, unsigned errval, unsigned far *devhdr)
 {
@@ -1733,7 +1730,7 @@ void far handler(unsigned deverr, unsigned errval, unsigned far *devhdr)
 
   cache_souris();
   gettext(1, 1, 80, 25,sauve_error);
-  fenetre(8,10,52,16,LIGHTRED,WHITE,WHITE,"Erreur detect‚e");
+  fenetre(8,10,52,16,LIGHTRED,WHITE,WHITE,"Erreur detectâ€še");
 
   if (deverr & 0x8000)  {
 	 error_win();
@@ -1818,7 +1815,7 @@ void code_hexa(int x,int y,char touche,int position)
 
 	colorxy(x+1,y,14,1);cprintf("%1c",touche2);
 
-	sauvegarde_octet[position]=hexa(touche,touche2);  // Je fais convertir par ma belle fonction les hexadecimals en (int) ASCII ( en gros c'est ‡a )
+	sauvegarde_octet[position]=hexa(touche,touche2);  // Je fais convertir par ma belle fonction les hexadecimals en (int) ASCII ( en gros c'est â€¡a )
 	colorxy(x,y,4,3);
 	cprintf("%02X",sauvegarde_octet[position]);
 
@@ -1884,9 +1881,9 @@ void command_system()
 	char ecran[4000];
 
 	cache_souris();
-	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas Ë†tre obliger de tout râ€šafficher
 	color(7,0);clrscr();fond(1);
-	printf(" Exit pour revenir … PCBOSS \n");
+	printf(" Exit pour revenir â€¦ PCBOSS \n");
 	_setcursortype(_NORMALCURSOR);
 	system("");
 	_setcursortype(_NOCURSOR);
@@ -1926,7 +1923,7 @@ void fenetre_directory(int color)
 {
 	cadre_plein(2,5,fenfix-3,22,BARRE,color,BLUE,1);  // cadre rep
 	// fleche pour les fichiers
-	locatext(4,22,"Ý      Þ",color+16*BLUE);
+	locatext(4,22,"Ã      Ãž",color+16*BLUE);
 	locatext(5,22,"Racine",11+16*BLUE);
 	fenetre_repertoire();
 	ass_vert(28,6,14,nbr_repertoire,place_r,3+16*1);
@@ -1939,7 +1936,7 @@ void hd_space(void)
 	int nbr_lecteur=0;
 	int gdisk=0;
 
-	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas ˆtre obliger de tout r‚afficher
+	gettext(1, 1, 80, 25, ecran); 		// Pour ne pas Ë†tre obliger de tout râ€šafficher
 	cadre_plein(4,4,76,21,0,7,7,1);
 	space(4,4,73,12+16*8);
 //	space(4,5,73,12+16*9);
@@ -1948,17 +1945,17 @@ void hd_space(void)
 	locatext(6,5,"Graphique   Drv      %      libre        cluster",0+16*7);
 	nbr_lecteur=recherche_nbr_lecteur();
 
-	gdisk=getdisk(); /* renvoie le num‚ro du disque actif (0 = A, 1 = B, 2 = C, etc.) */
+	gdisk=getdisk(); /* renvoie le numâ€šro du disque actif (0 = A, 1 = B, 2 = C, etc.) */
 
 
 	for (int i=0;i<nbr_lecteur-2;i++)
 	{
 		printf("%d",i);
 		printf("%d",nbr_lecteur);
-		locatext(5,7+i,"þþþþþþþþþþ",15+16*7);
+		locatext(5,7+i,"Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾Ã¾",15+16*7);
 		gotoxy(5,7+i);
 		for (int c=0;c<(10-(int ( (espace_disk_libre_pourcent(i+3)*10)/100)));c++)		{
-			 color(1,7);cprintf("þ");
+			 color(1,7);cprintf("Ã¾");
 		}
 		color(15,7);
 		gotoxy(19,7+i);cprintf("%c:",67+i);
