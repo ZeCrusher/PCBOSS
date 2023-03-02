@@ -1,5 +1,5 @@
 # PCBOSS V1 - OLD PC - MSDOS
-Lecture des dossiers : 
+Lecture des dossiers au lancement du programme. Cela peut être relativement long sur une disquette : 
 
 ![Image1](https://user-images.githubusercontent.com/102222839/204313664-ee259731-fb18-4a81-bcbb-25e86e639738.jpg)
 
