@@ -1,4 +1,4 @@
-// Programme PCBOSS par TSAKIROPOULOS SERGE
+// Programme PCBOSS par ZECRUSHER 
 // Utilitaire en Mode texte 80x25
 // Réaliser le: 12/12/1994
 // Dérnière modif: 03/11/97
