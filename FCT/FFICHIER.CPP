@@ -2,10 +2,10 @@
 
 /*   FFICHIER version 3.00
  Utilitaire en Mode texte 80x25
- R‚alis‚ le: 20/05/1995
- DŠrniŠre modif: 16/01/96
+ Râ€šalisâ€š le: 20/05/1995
+ DÅ rniÅ re modif: 16/01/96
  Programmation & conception: ZeCrusher
- Ce PROGRAMME peut ˆtre utilis‚ dans un autre programme
+ Ce PROGRAMME peut Ë†tre utilisâ€š dans un autre programme
  comme fonction
 
 */
@@ -61,8 +61,8 @@
  #define	INDEFINIE				-1
  #define	ERREUR_DISK				-1
  #define	LECTEUR_COURANT			0 // Pour les infos_ disk
- #define	LECTEUR_A				1  // les num‚ros des lecteurs commencent
- #define	LECTEUR_B				2  // … 1 pour _chrdrive
+ #define	LECTEUR_A				1  // les numâ€šros des lecteurs commencent
+ #define	LECTEUR_B				2  // â€¦ 1 pour _chrdrive
  #define	LECTEUR_C				3
  #define	LECTEUR_D				4
  #define	LECTEUR_E				5
@@ -78,7 +78,7 @@
  #define INIT_BOUTON				0
  #define BOUTON_DROIT		    2	// Les boutons de la souris sont ici definie pour une souris
  #define BOUTON_GAUCHE 			1	// donc seulement deux boutons, le DROIT et le GAUCHE, sont actif
- #define BOUTON_GAUCHE_DROIT		3	// pour une souris … trois bouton
+ #define BOUTON_GAUCHE_DROIT		3	// pour une souris â€¦ trois bouton
 
 typedef unsigned char byte;
 typedef unsigned int  word;
@@ -267,7 +267,7 @@ int attribut_fichier(char filename[14])
 	{
 	  if (errno==ENOENT) return (ENOENT);
 	  if (errno==EACCES) return (EACCES);
-	  if ((errno!=EACCES)&&(errno!=ENOENT)) printf(" Error number: %d , ERREUR indiqu‚e par FFICHIER.CPP TSK_" , errno);
+	  if ((errno!=EACCES)&&(errno!=ENOENT)) printf(" Error number: %d , ERREUR indiquâ€še par FFICHIER.CPP TSK_" , errno);
 	}
    else
 	  {
@@ -288,7 +288,7 @@ int get_file_attrib(char *filename)
 
 float espace_disk_libre_pourcent(int lecteur_disk) // retourne l'espace disk en pourcent
 {
-	union REGS regs; // sert … ‚changer des informations avec les fonctions: int86
+	union REGS regs; // sert â€¦ â€šchanger des informations avec les fonctions: int86
 	regs.h.ah=0x36;  // Numero de la fonction
 	regs.h.dl=lecteur_disk; // 0 pour A , 1 pour C
 	int86(0x21, &regs,&regs);
@@ -320,7 +320,7 @@ long taille_fichier(FILE *fichier)
 	return (length);
 
 }
-void arbre()
+void arbre() // lecture dossier - ZeCrusher 1994/ maj1995
 {
 	int depart=0;
 	int fin=0;
@@ -462,15 +462,15 @@ int dessiner_arbre(int fin)
 
 		if ((niveau_==0)&&((place_r+j)<fin))
 		{
-			strcpy(tree[j],"ÃÄ");
+			strcpy(tree[j],"ÃƒÃ„");
 		}
 		else
 		{
 			if ((niveau_==0)&&((place_r+j)==fin))	{
-					strcpy(tree[j],"ÀÄ");
+					strcpy(tree[j],"Ã€Ã„");
 			}
 			if ((niveau_>0)&&((place_r+j)<fin))		{
-				strcpy(tree[j],"³ ");
+				strcpy(tree[j],"Â³ ");
 			}
 			if ((niveau_>0)&&((place_r+j)>fin))  	{
 					strcpy(tree[j],"  ");
@@ -499,7 +499,7 @@ int dessiner_arbre(int niv_cour,int depart,int fin)
 						strcat(tree[j],"  ");
 				}
 			}
-			strcat(tree[j],"ÀÄ");
+			strcat(tree[j],"Ã€Ã„");
 
 		}
 		if ((niveau_==niv_cour)&&((place_r+j)<fin))
@@ -510,7 +510,7 @@ int dessiner_arbre(int niv_cour,int depart,int fin)
 						strcat(tree[j],"  ");
 				}
 			}
-			strcat(tree[j],"ÃÄ");
+			strcat(tree[j],"ÃƒÃ„");
 		}
 		else
 		{
@@ -522,7 +522,7 @@ int dessiner_arbre(int niv_cour,int depart,int fin)
 							strcat(tree[j],"  ");
 					}
 				}
-				strcat(tree[j],"³ ");
+				strcat(tree[j],"Â³ ");
 			}
 		}
 
@@ -578,7 +578,7 @@ int found_file(char fichier_choisie[13],char repertoire_en_cour[200],char type[1
 	cadre_plein(18,8,36,18,DOUBLE,8,15,0);// dessine le cadre fichier
 	cadre_plein(39,8,62,20,DOUBLE,8,15,0);// dessine le cadre repertoire
 	locatext(41,8," Fichier ",0+16*7);
-	locatext(20,8," R‚pertoire ",0+16*7);
+	locatext(20,8," Râ€špertoire ",0+16*7);
 	init_mem_repertoire();
 	nbr_repertoire=scan_repertoire("*.*");
 	nbr_fichier=recherche_fichier(type);
@@ -800,7 +800,7 @@ void ass_vert(int x,int y,int longueur,long nbr,int emplacement,int color)
 	int position=0; // Position du caractere '\x8'
 
 	for(int i=0;i<longueur;i++)
-		locatext(x,y+i+1,"°",color);
+		locatext(x,y+i+1,"Â°",color);
 
 	nbr=nbr-longueur;
 
